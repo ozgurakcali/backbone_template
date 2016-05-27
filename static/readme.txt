@@ -1,0 +1,1 @@
+Static media and script / style files will reside here.

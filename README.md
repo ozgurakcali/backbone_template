@@ -1,8 +1,4 @@
-
-
-![CubicFM](http://s3-eu-west-1.amazonaws.com/cubic-content/images/logos/logo_w.png)
-
-CubicFM Web Client
+Backbone Web App Template
 ====================
 
 This front-end structure is built on top of **BackboneJS**. It uses a few popular libraries such as **UnderscoreJS**, **RequireJS** and development tools such as **GruntJS**.
@@ -12,11 +8,7 @@ Files are organised starting from this [BackboneJS boilerplate](https://github.c
 
 ## Installation ##
 
-First, you should clone the directory on your machine with the following command
-
-``` bash
-git clone https://github.com/ozgurakcali/cubic_web.git
-```
+First, you should clone the directory on your machine.
 
 Then, you will need to download and install [Node.js](http://nodejs.org/). After installing NodeJS, execute the following commands in the project directory (you may have to use **'sudo'** or have administrator rights to run the following commands).
 
