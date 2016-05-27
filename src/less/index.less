@@ -1,0 +1,38 @@
+/* Global Imports */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,300&subset=latin,cyrillic-ext);
+@import "config";
+@import "utils/prefixer";
+
+/* General */
+html, body {
+	margin: 0;
+	padding: 0;
+	font-family: 'Open Sans', sans-serif !important;
+}
+
+a {
+	text-decoration: none;
+}
+
+.content-area {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.page-section {
+  padding: 50px 0;
+}
+
+.clearfix() {
+	&:before, &:after {
+		content: " ";
+		display: table;
+	}
+	&:after { clear: both; }
+}
+
+.icon {
+  font-family: 'icons';
+}
+
+@import "content/_content";

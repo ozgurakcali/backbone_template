@@ -1,0 +1,14 @@
+{
+    "dist": {
+        "version": "0.0.1",
+        "platform": "web",
+        "apiBase": "/api",
+        "staticUrl": "/static/"
+    },
+    "dev": {
+        "version": "0.0.1",
+        "platform": "web",
+        "apiBase": "/api",
+        "staticUrl": "/static/"
+    }
+}
