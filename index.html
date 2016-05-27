@@ -7,15 +7,10 @@
 
   <title></title>
 
-  <!-- Application styles. -->
-  <!-- build:[href] <%= staticUrl %>css/styles.min.css?v=<%= version %> -->
-  <link rel="stylesheet" href="">
-  <!-- /build -->
-
-  <!-- build:remove -->
-  <link rel="stylesheet/less" type="text/css" href="/src/less/index.less" />
-  <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.4.0/less.min.js" type="text/javascript"></script>
-  <!-- /build -->
+  <!-- Application styles -->
+  <!-- build:style main --><!-- /build -->
+  <!-- build:remove --><link rel="stylesheet/less" type="text/css" href="/src/less/index.less" /><!-- /build -->
+  <!-- build:remove --><script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.4.0/less.min.js" type="text/javascript"></script><!-- /build -->
 </head>
 
 <body>
@@ -36,9 +31,11 @@
 
   </div>
 
-  <!-- Application source. -->
-  <!-- build:[src] <%= staticUrl %>js/source.min.js?v=<%= version %> -->
-  <script src="/bower_components/requirejs/require.js" data-main="src/config"></script>
-  <!-- /build -->
+  <!-- Application source -->
+  <!-- build:script main --><!-- /build -->
+  <!-- build:remove --><script src="/bower_components/requirejs/require.js" data-main="src/config"></script><!-- /build -->
+
+  <!-- build:process --><div class="environment" id="<%= target %>"></div><!--/build -->
+  <!-- build:remove --><div class="environment" id="dev"></div><!-- /build -->
 </body>
 </html>
