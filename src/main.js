@@ -1,4 +1,7 @@
-require(['app', 'controller', 'router'],function(App, Controller, Router){
+require(['app', 'controller', 'router', 'text!appconfig.json'],function(App, Controller, Router, Config){
+
+	// Reading configuration parameters
+	App.Config = $.parseJSON(Config)[$('.environment').attr('id')];
 
 	// Set the App router and controller
 	App.Router = new Router({

@@ -1,8 +1,9 @@
 define(function(router){
 
 	var Backbone = require('backbone');
+	require('marionette');
 
-	var Router = Backbone.Marionette.AppRouter.extend({
+	return Backbone.Marionette.AppRouter.extend({
 
 		appRoutes: {
 			"": "home"
@@ -10,5 +11,4 @@ define(function(router){
 
 	});
 
-	return Router;
 });

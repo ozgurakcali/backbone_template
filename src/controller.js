@@ -1,6 +1,7 @@
 define(function(require){
 
     var Backbone = require('backbone');
+    require('marionette');
 
     var HomeView = require('views/content/home');
 

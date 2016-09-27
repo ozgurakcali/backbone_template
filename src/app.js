@@ -1,7 +1,7 @@
 define(function(require){
 
 	var Backbone = require('backbone');
-	var Marionette = require('marionette');
+	require('marionette');
 
 	var Utils = require('context/utils');
 

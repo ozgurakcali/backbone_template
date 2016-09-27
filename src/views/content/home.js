@@ -1,6 +1,8 @@
 define(function(require){
 
 	var Backbone = require('backbone');
+	require('marionette');
+	
 	var homeTemp = require("text!templates/content/home.html");
 
     var HomeView = Backbone.Marionette.LayoutView.extend({
