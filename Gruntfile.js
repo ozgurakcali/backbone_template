@@ -18,27 +18,20 @@ module.exports = function(grunt) {
     
     /*------- Clean -------*/
     clean: ["dist/"],
-    
+
     /*------- Build HTML -------*/
-    htmlbuild: {
-      dist: {
-        src: 'index.html',
-        dest: 'dist/',
-		options: {
-          relative: false,
-          beautify: true,
-
-          scripts: {
-            main: '<%= appConfig[target].staticUrl %>js/source.min.js?v=<%= appConfig[target].version %>'
-          },
-
-          styles: {
-            main: '<%= appConfig[target].staticUrl %>css/styles.min.css?v=<%= appConfig[target].version %>'
-          },
-
+    processhtml: {
+      release: {
+        files: {
+          'dist/index.html': ['index.html']
+        },
+        options: {
           data: {
-              target: '<%= target %>'
-          }
+            staticUrl: '<%= appConfig[target].staticUrl %>',
+            version: '<%= appConfig[target].version %>',
+            target: '<%= target %>'
+          },
+          process: true
         }
       }
     },
@@ -115,7 +108,7 @@ module.exports = function(grunt) {
   // Load NPM Tasks
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-clean');
-  grunt.loadNpmTasks('grunt-html-build');
+  grunt.loadNpmTasks('grunt-processhtml');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-requirejs');
   grunt.loadNpmTasks('grunt-contrib-less');
@@ -130,7 +123,7 @@ module.exports = function(grunt) {
     'requirejs',
     'less',
     'cssmin',
-    'htmlbuild'
+    'processhtml'
   ]);
 
   grunt.registerTask('serve', ['connect:development']); // Start local server on the main directory
