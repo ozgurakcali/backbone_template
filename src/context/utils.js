@@ -2,7 +2,7 @@ define(function(require) {
 
     var Backbone = require('backbone');
 
-    var utils = Backbone.Model.extend({
+    return Backbone.Model.extend({
 
         stripSlash: function(pathString) {
           if (pathString[0] == '/') {
@@ -37,7 +37,5 @@ define(function(require) {
         }
 
     });
-
-    return utils;
 
 });

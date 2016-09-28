@@ -1,5 +1,8 @@
 module.exports = function(grunt) {
 
+  var serveStatic = require('serve-static');
+  var modRewrite = require('connect-modrewrite');
+
   // Configuration
   grunt.initConfig({
 	  
@@ -91,14 +94,34 @@ module.exports = function(grunt) {
           base: 'dist',
           port: 8000,
           hostname: '127.0.0.1',
-          keepalive: true
+          keepalive: true,
+
+          middleware: function(connect, options) {
+            var middlewares;
+            middlewares = [];
+            middlewares.push( modRewrite( ['^[^\\.]*$ /index.html [L]'] ) );
+            options.base.forEach( function( base ) {
+              return middlewares.push( serveStatic( base ) );
+            });
+            return middlewares;
+          }
         }
       },
       development: {
         options: {
           port: 8000,
           hostname: '127.0.0.1',
-          keepalive: true
+          keepalive: true,
+
+          middleware: function(connect, options) {
+            var middlewares;
+            middlewares = [];
+            middlewares.push( modRewrite( ['^[^\\.]*$ /index.html [L]'] ) );
+            options.base.forEach( function( base ) {
+              return middlewares.push( serveStatic( base ) );
+            });
+            return middlewares;
+          }
         }
       }
     }

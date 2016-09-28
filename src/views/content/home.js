@@ -3,11 +3,11 @@ define(function(require){
 	var Backbone = require('backbone');
 	require('marionette');
 	
-	var homeTemp = require("text!templates/content/home.html");
+	var temp = require("text!templates/content/home.html");
 
-    var HomeView = Backbone.Marionette.LayoutView.extend({
+    return Backbone.Marionette.LayoutView.extend({
         // html template for the view
-		template: _.template(homeTemp),
+		template: _.template(temp),
 		className: 'home-page',
 
 		initialize: function(options) {
@@ -15,6 +15,4 @@ define(function(require){
 		}
 
 	});
-
-    return HomeView;
 });
